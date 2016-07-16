@@ -4,8 +4,6 @@
 - OpenCV 3.1.0
 - NetBeans IDE 8.1 (Build 201510222201)
 
-# Summary of OpenCV Setup
-
 # Setup MinGW
 *For the following steps, the values in between the parenthesis are my destinations and can differ depending on your configurations*
 
