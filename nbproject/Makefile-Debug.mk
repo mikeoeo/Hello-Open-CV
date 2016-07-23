@@ -35,7 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Main.o
+	${OBJECTDIR}/src/camera/VideoCapture.o \
+	${OBJECTDIR}/src/window/SimpleTextWindow.o
 
 
 # C Compiler Flags
@@ -96,10 +97,15 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppapplication_1.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cppapplication_1 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Main.o: Main.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/camera/VideoCapture.o: src/camera/VideoCapture.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/camera
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../Program\ Files/opencv/build/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Main.o Main.cpp
+	$(COMPILE.cc) -g -I../../../Program\ Files/opencv/build/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/camera/VideoCapture.o src/camera/VideoCapture.cpp
+
+${OBJECTDIR}/src/window/SimpleTextWindow.o: src/window/SimpleTextWindow.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/window
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../../../Program\ Files/opencv/build/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/window/SimpleTextWindow.o src/window/SimpleTextWindow.cpp
 
 # Subprojects
 .build-subprojects:
